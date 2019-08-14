@@ -1,11 +1,21 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <%- include('imports'); -%>
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title><%= title %></title>
+  <%- include('imports'); -%>
+</head>
+
+<body>
+  <%- include('navbar'); -%>
+
+  <div class="container-fluid">
+    <div class="row">
+      <% posts.forEach((post) => { %>
+        <%- include('post_card.ejs', { post: post} ) %>
+      <% }) %>
+    </div>
+  </div>
+</body>
+
 </html>
