@@ -9,8 +9,8 @@
 <body>
   <%- include('navbar'); -%>
 
-  <div class="container-fluid">
-    <div class="row">
+  <div class="container">
+    <div class="row justify-content-md-center">
       <% posts.forEach((post) => { %>
         <%- include('post_card.ejs', { post: post} ) %>
       <% }) %>

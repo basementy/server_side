@@ -4,10 +4,120 @@
 <head>
   <title><%= title %></title>
   <%- include('imports'); -%>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+    .container {
+      width: 100%;
+      height: 100vh;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .postList {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: left;
+    }
+
+    .postItem {
+      margin-bottom: 20px;
+      height: 150px;
+      display: flex;
+      justify-content: left;
+      align-items: center;
+      /* border: 1px solid rgb(179, 179, 179); */
+      border-radius: 5px;
+    }
+
+    .postImage {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-content: center;
+    }
+
+    .postItem img {
+      width: 150px;
+      height: 100%;
+      margin-right: 20px;
+      border-radius: 5px;
+      filter: grayscale(100%);
+      -webkit-box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
+      box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
+    }
+
+    .postItem button {
+      width: 100px;
+      height: 40px;
+      border: none;
+      border-radius: 3px;
+      background-color: rgb(228, 145, 145);
+      color: white;
+    }
+
+    .postContent {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    .postDescription {
+      display: flex;
+      align-items: left;
+      flex-direction: column;
+    }
+  </style>
 </head>
 
 <body>
   <%- include('navbar'); -%>
+
+  <!-- Posts -->
+  <div class="container">
+    <div class="postList">
+      <div class="postItem">
+        <div class="postImage">
+          <img src="../public/images/post1.jpg">
+        </div>
+        <div class="postContent">
+          <div class="postDescription">
+            <h4>Titulo</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <button>Ler mais</button>
+        </div>
+      </div>
+      <div class="postItem">
+        <div class="postImage">
+          <img src="../public/images/post1.jpg">
+        </div>
+        <div class="postContent">
+          <div class="postDescription">
+            <h4>Titulo</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <button>Ler mais</button>
+        </div>
+      </div>
+      <div class="postItem">
+        <div class="postImage">
+          <img src="../public/images/post1.jpg">
+        </div>
+        <div class="postContent">
+          <div class="postDescription">
+            <h4>Titulo</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+          </div>
+          <button>Ler mais</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </body>
 

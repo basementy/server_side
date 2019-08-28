@@ -20,13 +20,6 @@ var getPosts = function() {
       image: 'post1.jpg',
       description: 'Meu terceiro post',
       body: 'Meu terceiro post blablabla'
-    },
-    {
-      id: 4,
-      title: 'Post 4',
-      image: 'post1.jpg',
-      description: 'Meu quarto post',
-      body: 'Meu quarto post blablabla'
     }
   ]
 
