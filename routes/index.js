@@ -1,11 +1,14 @@
 var express = require("express");
 var router = express.Router();
 var postsService = require("../services/postsService");
+var projectsService = require("../services/projectsService");
 
 router.get("/", function(req, res, next) {
   var posts = postsService.getPosts();
   res.render("index", { title: "Blog", posts: posts });
 });
+
+// Rotas Individuais
 
 router.get("/posts/:postId", function(req, res, next) {
   var postId = req.params.postId;
@@ -17,10 +20,28 @@ router.get("/posts/:postId", function(req, res, next) {
   res.render("post", { title: post.title, post: post });
 });
 
+router.get("/projects/:projectId", function(req, res, next) {
+  var projectId = req.params.projectId;
+
+  var projects = projectsService.getProjects();
+
+  var project = projects.filter(project => project.id == projectId)[0];
+
+  res.render("project", { title: project.title, project: project });
+});
+
+// Rotas de Listagem
+
 router.get("/posts", function(req, res, next) {
   var posts = postsService.getPosts();
 
   res.render("posts", { title: "Posts", posts: posts });
+});
+
+router.get("/projects", function(req, res, next) {
+  var projects = projectsService.getProjects();
+
+  res.render("projects", { title: "Projects", projects: projects });
 });
 
 module.exports = router;
