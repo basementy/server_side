@@ -6,9 +6,57 @@
 	<%- include('./components/imports'); -%>
 
 	<style>
+		@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+		@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+
+		.container {
+			padding: 30px 0px;
+			font-family: 'Poppins', sans-serif;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
 		.postImage {
 			width: 100%;
-			border-radius: 5px;
+			height: 300px;
+			margin-bottom: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.postImage img {
+			width: 80%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 10px;
+			-webkit-box-shadow: 10px 15px 20px 0px rgba(0, 0, 0, 0.05);
+			-moz-box-shadow: 10px 15px 20px 0px rgba(0, 0, 0, 0.05);
+			box-shadow: 10px 15px 20px 0px rgba(0, 0, 0, 0.05);
+		}
+
+		.postTitle {
+			margin-bottom: 20px;
+		}
+
+		.postContent {
+			width: 80%;
+		}
+
+		.postContent h1 {
+			font-weight: 600;
+		}
+
+		.postContent h5 {
+			opacity: 0.8;
+		}
+
+		.postContent p {
+			font-family: 'Merriweather', serif;
+			font-size: 20px;
+			text-align: justify;
+			opacity: 0.9; 
 		}
 	</style>
 </head>
@@ -24,6 +72,7 @@
 		<div class="postContent">
 			<div class="postTitle">
 				<h1><%= post.title %></h1>
+				<h5><%= post.description %></h5>
 			</div>
 			<div class="postBody">
 				<p><%= post.body %></p>
