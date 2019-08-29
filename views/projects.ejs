@@ -9,6 +9,10 @@
     @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 
     .container {
+      padding: 0;
+    }
+
+    #postsContainer {
       width: 100%;
       padding: 40px 0px;
       font-family: 'Poppins', sans-serif;
@@ -95,10 +99,10 @@
   <%- include('./components/navbar'); -%>
 
   <!-- Posts -->
-  <div class="container">
+  <div class="container" id="postsContainer">
     <div class="projectList">
       <% projects.forEach((project) => { %>
-        <%- include('./components/projects_item.ejs', { project : project }) %>
+      <%- include('./components/projects_item.ejs', { project : project }) %>
       <% }) %>
     </div>
   </div>

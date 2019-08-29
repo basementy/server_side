@@ -9,7 +9,7 @@
 		@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 		@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
 
-		.container {
+		#postContainer {
 			padding: 30px 0px;
 			font-family: 'Poppins', sans-serif;
 			display: flex;
@@ -27,7 +27,7 @@
 		}
 
 		.postImage img {
-			width: 80%;
+			width: 100%;
 			height: 100%;
 			object-fit: cover;
 			border-radius: 10px;
@@ -41,7 +41,7 @@
 		}
 
 		.postContent {
-			width: 80%;
+			width: 100%;
 		}
 
 		.postContent h1 {
@@ -64,7 +64,7 @@
 <body>
 	<%- include('./components/navbar'); -%>
 
-	<div class="container">
+	<div class="container" id="postContainer">
 		<div class="postImage">
 			<img src="../public/images/<%= post.image %> " alt="">
 		</div>
