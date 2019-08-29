@@ -3,16 +3,16 @@
 
 <head>
   <title><%= title %></title>
-  <%- include('imports'); -%>
+  <%- include('./components/imports'); -%>
 </head>
 
 <body>
-  <%- include('navbar'); -%>
+  <%- include('./components/navbar'); -%>
 
   <div class="container">
     <div class="row justify-content-md-center">
       <% posts.forEach((post) => { %>
-        <%- include('post_card.ejs', { post: post} ) %>
+        <%- include('./components/post_card.ejs', { post: post} ) %>
       <% }) %>
     </div>
   </div>

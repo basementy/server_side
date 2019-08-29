@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title><%= project.title %></title>
+	<%- include('./components/imports'); -%>
+</head>
+
+<body>
+	<%- include('./components/navbar'); -%>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="post-detail">
+				<img src="../public/images/<%= project.image %> " alt="" style="width: 50px;">
+				<h1><%= project.title %></h1>
+				<span><%= project.subject %></span>
+				<p><%= project.description %></p>
+			</div>
+
+		</div>
+	</div>
+</body>
+
+</html>

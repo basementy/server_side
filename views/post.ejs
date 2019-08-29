@@ -3,21 +3,31 @@
 
 <head>
 	<title><%= post.title %></title>
-	<%- include('imports'); -%>
+	<%- include('./components/imports'); -%>
+
+	<style>
+		.postImage {
+			width: 100%;
+			border-radius: 5px;
+		}
+	</style>
 </head>
 
 <body>
-	<%- include('navbar'); -%>
+	<%- include('./components/navbar'); -%>
 
 	<div class="container">
-		<div class="row">
+		<div class="postImage">
+			<img src="../public/images/<%= post.image %> " alt="">
+		</div>
 
-			<div class="post-detail">
-				<img src="../public/images/<%= post.image %> " alt="">
+		<div class="postContent">
+			<div class="postTitle">
 				<h1><%= post.title %></h1>
+			</div>
+			<div class="postBody">
 				<p><%= post.body %></p>
 			</div>
-
 		</div>
 	</div>
 </body>
