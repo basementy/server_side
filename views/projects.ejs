@@ -64,15 +64,27 @@
     }
 
     .projectItem a {
-      width: 100px;
+      width: 150px;
       height: 40px;
-      border: none;
-      border-radius: 3px;
-      background-color: rgb(228, 145, 145);
-      color: white;
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
+      background-color: unset;
+      border: 1px solid black;
+      border-radius: 5px;
+      color: black;
+      -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
+      -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
+      transition: 300ms;
+    }
+    
+    .projectItem a:hover {
+      background-color: rgb(0, 0, 0);
+      color: white;
+      border: none;
+      text-decoration: none;
+      transition: 300ms;
     }
 
     .projectContent {
