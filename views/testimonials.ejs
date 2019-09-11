@@ -7,6 +7,62 @@
 
   <style>
     @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+    #testimonialContainer {
+      width: 100%;
+      font-family: 'Poppins', sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 50px;
+    }
+
+    .testimonialRow {
+      width: 90%;
+      max-width: 600px;
+      height: 140px;
+      background-color: rgb(248, 248, 248);
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 20px;
+      margin-bottom: 25px;
+      -webkit-box-shadow: 10px 20px 20px 0px rgba(0, 0, 0, 0.1);
+      -moz-box-shadow: 10px 20px 20px 0px rgba(0, 0, 0, 0.1);
+      box-shadow: 10px 20px 20px 0px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+    }
+
+    .testimonialRow img {
+      width: 80px;
+      height: 80px;
+      margin-right: 30px;
+      border-radius: 50%;
+    }
+
+    .testimonialContent {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    h2 {
+      font-size: 22px;
+    }
+
+    h5 {
+      font-size: 16px;
+      color: rgb(46, 46, 46);
+    }
+
+    p {
+      font-size: 14px;
+      margin: 0;
+      color: rgb(155, 155, 155);
+    }
   </style>
 </head>
 
@@ -15,11 +71,9 @@
 
   <!-- Posts -->
   <div class="container" id="testimonialContainer">
-    <div class="testimonialList">
-      <% testimonials.forEach((testimonial) => { %>
-      <%- include('./components/testimonial.ejs', { testimonial: testimonial }) %>
-      <% }) %>
-    </div>
+    <% testimonials.forEach((testimonial) => { %>
+    <%- include('./components/testimonial.ejs', { testimonial: testimonial }) %>
+    <% }) %>
   </div>
 
 </body>
