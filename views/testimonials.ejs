@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <%- include('./components/imports'); -%>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+  </style>
+</head>
+
+<body>
+  <%- include('./components/navbar'); -%>
+
+  <!-- Posts -->
+  <div class="container" id="testimonialContainer">
+    <div class="testimonialList">
+      <% testimonials.forEach((testimonial) => { %>
+      <%- include('./components/testimonial.ejs', { testimonial: testimonial }) %>
+      <% }) %>
+    </div>
+  </div>
+
+</body>
+
+</html>
