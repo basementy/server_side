@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title><%= service.name %></title>
+	<%- include('./components/imports'); -%>
+
+	<style>
+		
+	</style>
+</head>
+
+<body>
+	<%- include('./components/navbar'); -%>
+
+	<div class="container" id="postContainer">
+		<div class="serviceImage">
+			<img src="../public/images/<%= service.image %> " alt="">
+		</div>
+
+		<div class="serviceContent">
+			<div class="serviceTitle">
+				<h1><%= service.name %></h1>
+				<h5><%= service.description %></h5>
+			</div>
+			<div class="serviceBody">
+				<p><%= service.descriptionDetailed %></p>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>

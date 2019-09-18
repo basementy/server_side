@@ -4,114 +4,13 @@
 <head>
   <title><%= title %></title>
   <%- include('./components/imports'); -%>
-
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-
-    .container {
-      padding: 0;
-    }
-
-    #postsContainer {
-      width: 100%;
-      padding: 40px 0px;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .projectList {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      align-items: left;
-    }
-
-    .projectItem {
-      margin-bottom: 20px;
-      height: 150px;
-      display: flex;
-      justify-content: left;
-      align-items: center;
-      /* border: 1px solid rgb(179, 179, 179); */
-      border-radius: 5px;
-    }
-
-    .projectImage {
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-content: center;
-    }
-
-    .projectItem img {
-      width: 150px;
-      height: 100%;
-      margin-right: 20px;
-      border-radius: 5px;
-      filter: grayscale(100%);
-      -webkit-box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
-      -moz-box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
-      box-shadow: 5px 10px 15px 0px rgba(0, 0, 0, 0.08);
-      object-fit: cover;
-      opacity: 0.5;
-      transition: 500ms;
-    }
-
-    .projectImage img:hover {
-      filter: grayscale(0%);
-      opacity: 1;
-      transition: 500ms;
-    }
-
-    .projectItem a {
-      width: 150px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: unset;
-      border: 1px solid black;
-      border-radius: 5px;
-      color: black;
-      -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
-      -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
-      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
-      transition: 300ms;
-    }
-    
-    .projectItem a:hover {
-      background-color: rgb(0, 0, 0);
-      color: white;
-      border: none;
-      text-decoration: none;
-      transition: 300ms;
-    }
-
-    .projectContent {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
-      height: 100%;
-    }
-
-    .projectDescription {
-      display: flex;
-      align-items: left;
-      flex-direction: column;
-    }
-
-    .projectDescription span {
-      font-size: 14px;
-      opacity: 0.5;
-    }
-  </style>
 </head>
 
 <body>
   <%- include('./components/navbar'); -%>
 
   <!-- Posts -->
-  <div class="container" id="postsContainer">
+  <div class="container" id="projectsContainer">
     <div class="projectList">
       <% projects.forEach((project) => { %>
       <%- include('./components/projects_item.ejs', { project : project }) %>

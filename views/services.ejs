@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <%- include('./components/imports'); -%>
+</head>
+
+<body>
+  <%- include('./components/navbar'); -%>
+
+  <!-- Posts -->
+  <div class="container" id="servicesContainer">
+    <div class="servicesList">
+      <% services.forEach((service) => { %>
+      <%- include('./components/service_item.ejs', { service : service }) %>
+      <% }) %>
+    </div>
+  </div>
+
+</body>
+
+</html>

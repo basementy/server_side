@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var postsService = require("../services/postsService");
 var projectsService = require("../services/projectsService");
+var servicesService = require("../services/servicesService");
 
 router.get("/", function(req, res, next) {
   var posts = postsService.getPosts();
@@ -28,6 +29,16 @@ router.get("/projects/:projectId", function(req, res, next) {
   var project = projects.filter(project => project.id == projectId)[0];
 
   res.render("project", { title: project.title, project: project });
+});
+
+router.get("/services/:serviceId", function(req, res, next) {
+  var serviceId = req.params.serviceId;
+
+  var services = servicesService.getServices();
+
+  var service = services.filter(service => service.id == serviceId)[0];
+
+  res.render("service", { title: service.name, service: service });
 });
 
 // Rotas de Listagem
