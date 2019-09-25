@@ -97,6 +97,7 @@
 }
 
 .cardBody {
+  width: 100%;
   padding: 10px 0px;
   display: flex;
   flex-direction: column;
@@ -227,6 +228,7 @@ img {
   justify-content: space-between;
   flex-direction: column;
   height: 100%;
+  width: 100%;
 }
 
 .postsContent p {
