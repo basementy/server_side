@@ -4,20 +4,20 @@
     "title": "Post 1",
     "image": "post.jpg",
     "description": "Meu primeiro post",
-    "body": "Meu primeiro post"
+    "body": "Meu primeiro post!"
   },
   {
     "id": 2,
     "title": "Post 2",
     "image": "post.jpg",
     "description": "Meu segundo post",
-    "body": "Meu segundo post"
+    "body": "Meu segundo post!"
   },
   {
     "id": 3,
     "title": "Post 3",
     "image": "post.jpg",
     "description": "Meu terceiro post",
-    "body": "Meu terceiro post"
+    "body": "Meu terceiro post!"
   }
 ]
