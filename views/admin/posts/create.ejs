@@ -12,7 +12,7 @@
       <h1>Cadastrar</h1>
     </div>
     <div class="row rowForm">
-      <form action="create" method="POST">
+      <form action="create" method="POST" enctype="multipart/form-data">
         <div class="formContainer">
           <div class="formWrapper">
             <label for="postTitle">Título</label>
@@ -21,7 +21,7 @@
 
           <div class="formWrapper">
             <label for="postImage">Imagem</label>
-            <input name="image" type="text" class="formInput" id="postImage" placeholder="Imagem do post">
+            <input name="image" type="file" class="formInput" id="postImage" placeholder="Imagem do post">
           </div>
         </div>
         <div class="formContainer">
