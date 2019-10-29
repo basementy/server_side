@@ -8,6 +8,13 @@
 					<li><a href="/services">Services</a></li>
 					<li><a href="/projects">Projects</a></li>
 					<li><a href="/testimonials">Testimonials</a></li>
+					<% if (locals.loggedUser) { %>
+						<li style="display: flex; justify-content: flex-end; align-items: flex-end; flex: 1; margin-right: 0px">
+							<a href="#">
+								<%= locals.loggedUser.email %>
+							</a>
+						</li>
+					<% } %>
 				</ul>
 			</div>
 		</div>
