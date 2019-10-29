@@ -10,7 +10,7 @@
 					<li><a href="/testimonials">Testimonials</a></li>
 					<% if (locals.loggedUser) { %>
 						<li style="display: flex; justify-content: flex-end; align-items: flex-end; flex: 1; margin-right: 0px">
-							<a href="#">
+							<a href="/auth/logout">
 								<%= locals.loggedUser.email %>
 							</a>
 						</li>
