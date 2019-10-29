@@ -10,11 +10,11 @@
 
   <div class="container">
     <div class="row rowTitle">
-      <h1>Administração de Posts</h1>
+      <h1>Administração de Projetos</h1>
     </div>
 
     <div class="row rowButton">
-      <a href="/admin/posts/create" class="btnCreate">Novo</a>
+      <a href="/admin/projects/create" class="btnCreate">Novo</a>
     </div>
 
     <div class="row tableRow">
@@ -26,10 +26,10 @@
           </tr>
         </thead>
         <tbody>
-          <% posts.forEach((post) => { %>
+          <% projects.forEach((project) => { %>
             <tr>
-              <td><%= post.id %></td>
-              <td><%= post.title %></td>
+              <td><%= project.id %></td>
+              <td><%= project.title %></td>
             </tr>
           <% }); %>
           

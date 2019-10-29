@@ -1,24 +1,32 @@
-var getTestimonials = function() {
-  var testimonials = [
-    {
-      id: 1,
-      name: 'João da Silva',
-      company: 'Totvs',
-      title: 'Front-end Developer',
-      testimony: 'I love my company!'
-    },
-    {
-      id: 2,
-      name: 'Paulo de Oliveira',
-      company: 'Neogrid',
-      title: 'Back-end Developer',
-      testimony: 'My job is awesome!'
-    }
-  ]
+var fs = require('fs')
 
-  return testimonials;
+var testimonialsFilePath = 'db/testimonials.json'
+
+var loadFileTestimonials = function() {
+  var fileData = fs.readFileSync(testimonialsFilePath, 'utf8')
+  var testimonials = JSON.parse(fileData)
+
+  return testimonials
+}
+
+var saveFileTestimonials = function(testimonials) {
+  var data = JSON.stringify(testimonials)
+  fs.writeFileSync(testimonialsFilePath, data, 'utf8')
+}
+
+var getTestimonials = function() {
+  var testimonials = loadFileTestimonials()
+
+  return testimonials
+}
+
+var saveTestimonial = function(newTestimonial) {
+  var testimonials = loadFileTestimonials()
+  testimonials.push(newTestimonial)
+  saveFileTestimonials(testimonials)
 }
 
 module.exports = {
-  getTestimonials: getTestimonials
+  getTestimonials: getTestimonials,
+  saveTestimonial: saveTestimonial
 }

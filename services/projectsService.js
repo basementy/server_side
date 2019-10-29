@@ -1,38 +1,32 @@
+var fs = require('fs')
+
+var projectsFilePath = 'db/projects.json'
+
+var loadFileProjects = function() {
+  var fileData = fs.readFileSync(projectsFilePath, 'utf8')
+  var projects = JSON.parse(fileData)
+
+  return projects
+}
+
+var saveFileProjects = function(projects) {
+  var data = JSON.stringify(projects)
+  fs.writeFileSync(projectsFilePath, data, 'utf8')
+}
+
 var getProjects = function() {
-    var projects = [
-      {
-        id: 1,
-        title: 'Server-Side',
-        image: 'server-side.svg',
-        description: 'Projeto criado para a prática e aprendizagem de programação Server-Side',
-        subject: 'Programação Server-Side'
-      },
-      {
-        id: 2,
-        title: 'Tic-Tac-Toe',
-        image: 'tic_tac_toe.gif',
-        description: 'Um jogo elaborado em sala para prática dos conhecimentos de Javascript',
-        subject: 'Ferramentas Web & UX'
-      },
-      {
-        id: 3,
-        title: 'Tic-Tac-Toe (In C Language)',
-        image: 'tic_tac_toe.gif',
-        description: 'Projeto criado para treinar as habilidades aprendidas na linguagem C',
-        subject: 'Fundamentos de Programação'
-      },
-      {
-        id: 4,
-        title: 'Site - Bootstrap',
-        image: 'site.jpg',
-        description: 'Site desenvolvido utilizando Bootstrap',
-        subject: 'Ferramentas Web & UX'
-      }
-    ]
+  var projects = loadFileProjects()
+
+  return projects
+}
+
+var saveProject = function(newProject) {
+  var projects = loadFileProjects()
+  projects.push(newProject)
+  saveFileProjects(projects)
+}
   
-    return projects
-  }
-  
-  module.exports = {
-    getProjects : getProjects
-  }
+module.exports = {
+  getProjects : getProjects,
+  saveProject : saveProject
+}

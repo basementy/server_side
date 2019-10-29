@@ -2,41 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Posts</title>
+  <title>Admin - Create Post</title>
   <%- include('../../components/imports'); -%>
 </head>
 <body>
   <%- include('../../components/navbar'); -%>
   <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <h1>Novo Post</h1>
-      </div>
+    <div class="row rowTitleCreate">
+      <h1>Cadastrar</h1>
     </div>
-    <div class="row">
-      <div class="col-md-12">
-          <form action="create" method="POST">
-              <div class="form-group">
-                <label for="postTitle">Título</label>
-                <input name="title" type="text" class="form-control" id="postTitle" placeholder="Título do post">
-              </div>
-              <div class="form-group">
-                <label for="postImage">Imagem</label>
-                <input name="image" type="text" class="form-control" id="postImage" placeholder="Imagem do post">
-              </div>
-              <div class="form-group">
-                <label for="postDescription">Descrição</label>
-                <textarea name="description" type="text" class="form-control" id="postDescription" placeholder=""></textarea>
-              </div>
+    <div class="row rowForm">
+      <form action="create" method="POST" enctype="multipart/form-data">
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="postTitle">Título</label>
+            <input name="title" type="text" class="formInput" id="postTitle" placeholder="Título do post">
+          </div>
 
-              <div class="form-group">
-                <label for="postBody">Corpo do Post</label>
-                <textarea name="postBody" type="text" class="form-control" id="postBody" placeholder=""></textarea>
-              </div>
-              <button type="submit" class="btn btn-primary">Salvar</button>
-            </form>
-      </div>
-        
+          <div class="formWrapper">
+            <label for="postImage">Imagem</label>
+            <input name="image" type="file" class="formInput" id="postImage" placeholder="Imagem do post">
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="postDescription">Descrição</label>
+            <textarea name="description" type="text" class="formInput" id="postDescription" placeholder=""></textarea>
+          </div>
+  
+          <div class="formWrapper">
+            <label for="postBody">Corpo do Post</label>
+            <textarea name="postBody" type="text" class="formInput" id="postBody" placeholder=""></textarea>
+          </div>
+        </div>
+        <div class="row rowCreateButton">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
     </div>
   </div>
 </body>

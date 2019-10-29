@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Create Project</title>
+  <%- include('../../components/imports'); -%>
+</head>
+<body>
+  <%- include('../../components/navbar'); -%>
+  <div class="container">
+    <div class="row rowTitleCreate">
+      <h1>Cadastrar</h1>
+    </div>
+    <div class="row rowForm">
+      <form action="create" method="POST">
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="projectTitle">Título</label>
+            <input name="title" type="text" class="formInput" id="projectTitle" placeholder="Título do projeto">
+          </div>
+
+          <div class="formWrapper">
+            <label for="projectImage">Imagem</label>
+            <input name="image" type="text" class="formInput" id="projectImage" placeholder="Imagem do projeto">
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="projectSubject">Matéria</label>
+            <input name="subject" type="text" class="formInput" id="projectSubject" placeholder="Nome da matéria"></textarea>
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="projectDescription">Descrição</label>
+            <textarea name="description" type="text" class="formInput" id="projectDescription" placeholder="Informe a descrição"></textarea>
+          </div>
+        </div>
+        <div class="row rowCreateButton">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

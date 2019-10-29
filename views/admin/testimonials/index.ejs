@@ -10,11 +10,11 @@
 
   <div class="container">
     <div class="row rowTitle">
-      <h1>Administração de Posts</h1>
+      <h1>Administração de Testimonials</h1>
     </div>
 
     <div class="row rowButton">
-      <a href="/admin/posts/create" class="btnCreate">Novo</a>
+      <a href="/admin/testimonials/create" class="btnCreate">Novo</a>
     </div>
 
     <div class="row tableRow">
@@ -22,14 +22,14 @@
         <thead>
           <tr>
             <th scope="col">Código</th>
-            <th scope="col">Título</th>
+            <th scope="col">Nome</th>
           </tr>
         </thead>
         <tbody>
-          <% posts.forEach((post) => { %>
+          <% testimonials.forEach((testimonial) => { %>
             <tr>
-              <td><%= post.id %></td>
-              <td><%= post.title %></td>
+              <td><%= testimonial.id %></td>
+              <td><%= testimonial.name %></td>
             </tr>
           <% }); %>
           

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Create Project</title>
+  <%- include('../../components/imports'); -%>
+</head>
+<body>
+  <%- include('../../components/navbar'); -%>
+  <div class="container">
+    <div class="row rowTitleCreate">
+      <h1>Cadastrar</h1>
+    </div>
+    <div class="row rowForm">
+      <form action="create" method="POST">
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="testimonialName">Nome</label>
+            <input name="name" type="text" class="formInput" id="testimonialName" placeholder="Informe o nome">
+          </div>
+          <div class="formWrapper">
+            <label for="testimonialCompany">Empresa</label>
+            <input name="company" type="text" class="formInput" id="testimonialCompany" placeholder="Informe o nome da empresa">
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="testimonialTitle">Cargo</label>
+            <input name="title" type="text" class="formInput" id="testimonialTitle" placeholder="Informe o cargo"></textarea>
+          </div>
+        </div>
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="testimonialTestimony">Descrição</label>
+            <textarea name="testimony" type="text" class="formInput" id="testimonialTestimony" placeholder="Digite o depoimento"></textarea>
+          </div>
+        </div>
+        <div class="row rowCreateButton">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
