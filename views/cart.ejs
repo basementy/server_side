@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <%- include('./components/imports'); -%>
+</head>
+
+<body>
+  <%- include('./components/navbar'); -%>
+
+  <!-- Products / Cart-->
+  <div class="container">
+    <h1>Carrinho de Compras</h1>
+    <div class="cartList">
+      <% cart.forEach(item => { %>
+        <h1><%= item.name %></h1>
+      <% }) %>
+    </div>
+  </div>
+</body>
+
+</html>

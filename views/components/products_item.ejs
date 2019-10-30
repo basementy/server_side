@@ -1,0 +1,15 @@
+<div class="productsItem">
+    <div class="productsImage">
+      <img src="../public/images/<%= product.image %>">
+    </div>
+    <div class="productsContent">
+      <div class="productsDescription">
+        <h4><%= product.name %></h4>
+        <p><%= product.description %></p>
+        <h4 style="margin-top: 10px">R$ <%= product.price %></h4>
+      </div>
+      <div class="cartButton">
+        <button onclick="setCart({name: '<%= product.name %>', image: '<%= product.image %>', price: '<%= product.price %>'})">Adicionar <i class="fas fa-cart-plus" style="margin-left: 10px; opacity: 0.9"></i></button>
+      </div>
+    </div>
+  </div>

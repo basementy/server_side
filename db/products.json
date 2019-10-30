@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Teste",
+    "description": "Teste",
+    "price": "10",
+    "image": "post.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Onibus",
+    "image": "image-1572390975445.jpg",
+    "price": "20",
+    "description": "asdasdasd"
+  }
+]

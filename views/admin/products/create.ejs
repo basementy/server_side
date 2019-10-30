@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Create Product</title>
+  <%- include('../../components/imports'); -%>
+</head>
+
+<body>
+  <%- include('../../components/navbar'); -%>
+  <div class="container">
+    <div class="row rowTitleCreate">
+      <h1>Cadastrar</h1>
+    </div>
+    <div class="row rowForm">
+      <form action="create" method="POST" enctype="multipart/form-data">
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="productName">Nome</label>
+            <input name="name" type="text" class="formInput" id="productName" placeholder="Nome do produto">
+          </div>
+
+          <div class="formWrapper">
+            <label for="productPrice">Preço</label>
+            <input name="price" type="text" class="formInput" id="productPrice" placeholder="Preço"></textarea>
+          </div>
+        </div>
+
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="productDescription">Descrição</label>
+            <textarea name="description" type="text" class="formInput" id="postDescription"
+              placeholder="Descrição do produto"></textarea>
+          </div>
+        </div>
+
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="productImage">Imagem</label>
+            <input name="image" type="file" class="formInput" id="productImage" placeholder="Imagem do produto">
+          </div>
+        </div>
+        
+        <div class="row rowCreateButton">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
