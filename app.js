@@ -13,7 +13,6 @@ var servicesRouter = require("./routes/services");
 var adminPostsRouter = require("./routes/admin/posts");
 var adminTestimonialsRouter = require("./routes/admin/testimonials");
 var adminProjectsRouter = require("./routes/admin/projects");
-var adminProductsRouter = require("./routes/admin/products");
 var authRouter = require("./routes/auth");
 var verifyAuth = require("./middlewares/authMiddleware");
 
@@ -48,7 +47,6 @@ app.use("/services", servicesRouter);
 app.use("/admin/posts", [verifyAuth], adminPostsRouter);
 app.use("/admin/testimonials", [verifyAuth], adminTestimonialsRouter);
 app.use("/admin/projects", [verifyAuth], adminProjectsRouter);
-app.use("/admin/products", [verifyAuth], adminProductsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

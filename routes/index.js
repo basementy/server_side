@@ -3,7 +3,6 @@ var router = express.Router();
 var postsService = require("../services/postsService");
 var projectsService = require("../services/projectsService");
 var servicesService = require("../services/servicesService");
-var productsService = require("../services/productsService")
 
 router.get("/", function(req, res, next) {
   var posts = postsService.getPosts();
@@ -54,17 +53,6 @@ router.get("/projects", function(req, res, next) {
   var projects = projectsService.getProjects();
 
   res.render("projects", { title: "Projects", projects: projects });
-});
-
-router.get("/products", function(req, res, next) {
-  var products = productsService.getProducts();
-  
-  res.render("products", { title: "Produtos", products: products});
-});
-
-router.get("/cart", function(req, res, next) {
-  var cart = productsService.getCart()
-  res.render("cart", { title: "Carrinho", cart: cart });
 });
 
 module.exports = router;
