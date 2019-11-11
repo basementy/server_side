@@ -9,7 +9,7 @@ router.get("/", function(req, res, next) {
   res.render("index", { title: "Blog", posts: posts });
 });
 
-// Rotas Individuais
+// --> Rotas Individuais <--
 
 router.get("/posts/:postId", function(req, res, next) {
   var postId = req.params.postId;
@@ -41,7 +41,7 @@ router.get("/services/:serviceId", function(req, res, next) {
   res.render("service", { title: service.name, service: service });
 });
 
-// Rotas de Listagem
+// --> Rotas de Listagem <--
 
 router.get("/posts", function(req, res, next) {
   var posts = postsService.getPosts();
