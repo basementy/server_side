@@ -1,5 +1,4 @@
 var fs = require("fs");
-
 var temperatureSensorsFilePath = "db/temp_sensors.json";
 
 var loadFileTemperatureSensors = function() {
@@ -9,17 +8,34 @@ var loadFileTemperatureSensors = function() {
   return sensors;
 };
 
+var loadFileActuators = function() {
+  var fileData = fs.readFileSync(actuatorsFilePath, 'utf8');
+  var actuators = JSON.parse(fileData);
+
+  return actuators;
+}
+
+var saveFileActuators = function(actuators) {
+  var data = JSON.stringify(actuators);
+  fs.writeFileSync(actuatorsFilePath, data, 'utf8');
+}
+
 var saveFileTemperatureSensors = function(sensors) {
   var data = JSON.stringify(sensors);
   fs.writeFileSync(temperatureSensorsFilePath, data, "utf8");
 };
+
+var getActuators = function() {
+  var actuators = loadFileActuators();
+  return actuators;
+}
 
 var getSensors = function() {
   var sensors = loadFileTemperatureSensors();
   return sensors;
 };
 
-var addMeasurement = function(sensorId, temperature, umidity) {
+var addMeasurement = function(sensorId, temperature, humidity) {
   var sensors = loadFileTemperatureSensors();
 
   var selectedSensor = sensors.find(sensor => sensor.id == sensorId);
@@ -27,7 +43,7 @@ var addMeasurement = function(sensorId, temperature, umidity) {
   var measurementData = {
     date: new Date().toLocaleString(),
     temperature: temperature,
-    umidity: umidity
+    humidity: humidity
   };
 
   selectedSensor.measurements.push(measurementData);
@@ -37,5 +53,6 @@ var addMeasurement = function(sensorId, temperature, umidity) {
 
 module.exports = {
   getSensors: getSensors,
+  getActuators: getActuators,
   addMeasurement: addMeasurement
 };
