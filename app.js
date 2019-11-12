@@ -14,6 +14,8 @@ var servicesRouter = require("./routes/services")
 var adminPostsRouter = require("./routes/admin/posts")
 var adminTestimonialsRouter = require("./routes/admin/testimonials")
 var adminProjectsRouter = require("./routes/admin/projects")
+var adminActuatorsRouter = require("./routes/admin/actuators")
+var adminSensorsRouter = require("./routes/admin/sensors")
 
 var authRouter = require("./routes/auth")
 var verifyAuth = require("./middlewares/authMiddleware")
@@ -54,6 +56,8 @@ app.use('/actuators', actuatorsRouter);
 app.use("/admin/posts", [verifyAuth], adminPostsRouter)
 app.use("/admin/testimonials", [verifyAuth], adminTestimonialsRouter)
 app.use("/admin/projects", [verifyAuth], adminProjectsRouter)
+app.use("/admin/actuators", [verifyAuth], adminActuatorsRouter)
+app.use("/admin/sensors", [verifyAuth], adminSensorsRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
