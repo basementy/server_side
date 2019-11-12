@@ -7,23 +7,42 @@
 					<li><a href="#" id="contentDropdown">Conteúdo</a></li>
 					<div class="dropDown" style="z-index: 10; background: #fff; padding: 20px; border-radius: 5px; -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
 					-moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
-					box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1); display: none; position: absolute; top: 80px; animation-name: dropDownAnimation;
+					box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1); display: none; position: absolute; left: 200px; top: 80px; animation-name: dropDownAnimation;
   animation-duration: 1s;">
 						<ul style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column">
 							<li><a href="/posts">Posts</a></li>
 							<li><a href="/services">Services</a></li>
 							<li><a href="/projects">Projects</a></li>
 							<li><a href="/testimonials">Testimonials</a></li>
-							<li><a href="/products">Produtos</a></li>
-							<% if (!locals.loggedUser) { %>
-								<li><a href="/auth/login">Administração</a></li>
-							<% } %>
+							<li><a href="/sensors">Sensores</a></li>
+							<!-- <li><a href="/products">Produtos</a></li> -->
 						</ul>
 					</div>
+					<% if (locals.loggedUser) { %>
+						<li><a href="#" id="adminstrationDropDown">Administração</a></li>
+						<div class="adminstrationDropDown" style="z-index: 10; background: #fff; padding: 20px; border-radius: 5px; -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+						-moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+						box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1); display: none; position: absolute; top: 80px; left: 330px; animation-name: dropDownAnimation;
+		animation-duration: 1s;">
+							<ul style="display: flex; justify-content: center; align-items: flex-start; flex-direction: column">
+								<li><a href="/admin/sensors">Sensores</a></li>
+								<li><a href="/admin/actuators">Ativadores</a></li>
+								<li><a href="/admin/posts">Posts</a></li>
+								<li><a href="/admin/testimonials">Depoimentos</a></li>
+								<li><a href="/admin/projects">Projetos</a></li>
+							</ul>
+						</div>
+					<% } %>
 					<% if (locals.loggedUser) { %>
 						<li style="display: flex; justify-content: flex-end; align-items: flex-end; flex: 1; margin-right: 0px">
 							<a href="/auth/logout">
 								<%= locals.loggedUser.email %>
+							</a>
+						</li>
+					<% } else { %>
+						<li style="display: flex; justify-content: flex-end; align-items: flex-end; flex: 1; margin-right: 0px">
+							<a href="/auth/login">
+								Entrar
 							</a>
 						</li>
 					<% } %>
@@ -34,10 +53,18 @@
 </div>
 
 <script>
+	var adminstrationDropDownBtn = document.querySelector('#adminstrationDropDown')
 	var dropDownBtn = document.querySelector('#contentDropdown')
 	var dropDown = document.querySelector('.dropDown')
+	var adminstrationDropDown = document.querySelector('.adminstrationDropDown')
 
 	dropDownBtn.onclick = function() {
+		adminstrationDropDown ? adminstrationDropDown.style.display = 'none' : ''
 		dropDown.style.display == 'flex' ? dropDown.style.display = 'none' : dropDown.style.display = 'flex'
+	}
+
+	adminstrationDropDownBtn.onclick = function() {
+		dropDown.style.display = 'none'
+		adminstrationDropDown.style.display == 'flex' ? adminstrationDropDown.style.display = 'none' : adminstrationDropDown.style.display = 'flex'
 	}
 </script>

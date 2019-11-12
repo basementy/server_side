@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Admin - Create Post</title>
+  <%- include('../../components/imports'); -%>
+</head>
+<body>
+  <%- include('../../components/navbar'); -%>
+  <div class="container">
+    <div class="row rowTitleCreate">
+      <h1>Cadastrar</h1>
+		</div>
+		
+    <div class="row rowForm">
+      <form action="create" method="POST">
+        <div class="formContainer">
+          <div class="formWrapper">
+            <label for="sensorName">Nome</label>
+            <input name="sensorName" type="text" class="formInput" id="sensorName" placeholder="Nome do sensor">
+          </div>
+        </div>
+        <div class="row rowCreateButton">
+          <button type="submit">Salvar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
