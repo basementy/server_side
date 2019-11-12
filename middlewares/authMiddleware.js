@@ -15,14 +15,17 @@ var verifyAuth = function(req, res, next) {
       if (user) {
         res.locals.loggedUser = authService.getUserByEmail(user.email);
         next();
-      } else{
+      } else {
         redirectToLogin(res);
       }
+      
+    } else {
+      redirectToLogin(res);
     }
-  }
 
-  res.locals.loggedUser = null;
-  res.redirect('/auth/login');
+  } else {
+    redirectToLogin(res);
+  }
 }
 
-module.exports = verifyAuth; 
+module.exports = verifyAuth;
