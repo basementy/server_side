@@ -1,12 +1,1 @@
-[
-	{
-		"id": 1,
-		"name": "Luz da Sala",
-		"status": true
-	},
-	{
-		"id": 2,
-		"name": "Luz do Quarto",
-		"status": true
-	}
-]
+[{"id":1,"name":"Luz da Sala","status":true},{"id":2,"name":"Luz do Quarto","status":true},{"id":3,"name":"Luz da Cozinha","status":false}]
