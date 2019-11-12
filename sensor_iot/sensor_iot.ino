@@ -12,9 +12,12 @@
 #define DHTPIN  D6
 
 String SERVER_URL = "http://192.168.0.12:3000";
-String SENSOR_ID = "1";
 
-String URL_SENSOR = SERVER_URL + "/devices/" + SENSOR_ID + "/add";
+String SENSOR_ID = "1";
+String ACTUATOR_ID = "1";
+
+String URL_SENSOR = SERVER_URL + "/sensors/" + SENSOR_ID + "/add";
+String URL_ACTUATOR = SERVER_URL + "/actuators/" + ACTUATOR_ID;
 
 HTTPClient http;
 DHT dht(DHTPIN, DHTTYPE, 11);
@@ -38,10 +41,10 @@ void setupWifi(){
   Serial.println(WiFi.localIP());
 }
 
-void sendDataToServer(float temperature, float umidity){
+void sendDataToServer(float temperature, float humidity){
   if((WiFi.status() == WL_CONNECTED)) {
       Serial.println("Enviando dados...");
-      String dados = "{ \"temperature\" : \"" + String(temperature) + "\", \"umidity\" : \"" + String(umidity) + "\" }";
+      String dados = "{ \"temperature\" : \"" + String(temperature) + "\", \"humidity\" : \"" + String(humidity) + "\" }";
       http.begin(URL_SENSOR);
       http.addHeader("Content-Type", "application/json");
       int httpCode = http.POST(dados);
@@ -56,7 +59,39 @@ void sendDataToServer(float temperature, float umidity){
   }
 }
 
+String getDataFromServer(){
+  if((WiFi.status() == WL_CONNECTED)) {
+      http.begin(URL_ACTUATOR);
+      http.addHeader("Content-Type", "application/json");
+      int httpCode = http.GET();
+      if(httpCode == HTTP_CODE_OK){
+         return http.getString();
+      }else{
+        Serial.println("Erro ao buscar os dados");
+        Serial.print("Code:");
+        Serial.println(httpCode);
+      }
+      http.end();
+  }
+  return String();
+}
 
+void verifyLedStatus() {
+  String serverData = getDataFromServer();
+
+  Serial.println(serverData);
+  
+  DynamicJsonBuffer jsonBuffer;
+  JsonObject& root = jsonBuffer.parseObject(serverData);
+  long actuatorStatus = root["status"];
+  Serial.println(actuatorStatus);
+  
+  if(actuatorStatus == 0) {
+    digitalWrite(PIN_LED, LOW);
+  } else {
+    digitalWrite(PIN_LED, HIGH);
+  }
+}
 void setup() {
   Serial.begin(9600);
   while (!Serial) {
@@ -68,14 +103,15 @@ void setup() {
 
 void loop() {
   long tempo = millis();
-  float umidity = dht.readHumidity();
+  float humidity = dht.readHumidity();
   float temperature = dht.readTemperature(false);
 
-  Serial.println(umidity);
+  Serial.println(humidity);
   Serial.println(temperature);
 
-  sendDataToServer(temperature, umidity);
-
+  sendDataToServer(temperature, humidity);
+  
+  verifyLedStatus();
 
   delay(10000);
 }
