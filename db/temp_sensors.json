@@ -4,44 +4,19 @@
     "name": "Temperatura e Umidade da Sala",
     "measurements": [
       {
-        "date": "11/10/2019, 7:37:32 PM",
-        "temperature": 25,
-        "umidity": 80
+        "date": "11/12/2019, 11:57:55 AM",
+        "temperature": "26.10",
+        "humidity": "78.70"
       },
       {
-        "date": "11/10/2019, 7:43:17 PM",
-        "temperature": 30,
-        "umidity": 90
+        "date": "11/12/2019, 11:58:06 AM",
+        "temperature": "26.10",
+        "humidity": "76.80"
       },
       {
-        "date": "11/10/2019, 7:54:32 PM",
-        "temperature": "28.20",
-        "umidity": "85.60"
-      },
-      {
-        "date": "11/10/2019, 7:54:42 PM",
-        "temperature": "28.30",
-        "umidity": "86.10"
-      },
-      {
-        "date": "11/10/2019, 7:54:53 PM",
-        "temperature": "28.30",
-        "umidity": "86.00"
-      },
-      {
-        "date": "11/10/2019, 7:55:03 PM",
-        "temperature": "29.40",
-        "umidity": "85.40"
-      },
-      {
-        "date": "11/10/2019, 7:55:13 PM",
-        "temperature": "29.30",
-        "umidity": "81.60"
-      },
-      {
-        "date": "11/10/2019, 7:55:24 PM",
-        "temperature": "29.00",
-        "umidity": "79.80"
+        "date": "11/12/2019, 11:58:16 AM",
+        "temperature": "26.10",
+        "humidity": "76.00"
       }
     ]
   }
