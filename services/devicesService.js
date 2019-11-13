@@ -69,5 +69,6 @@ module.exports = {
   getActuators: getActuators,
   saveSensor: saveSensors,
   saveActuator: saveActuators,
+  saveFileActuators: saveFileActuators,
   addMeasurement: addMeasurement
 };
