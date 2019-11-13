@@ -24,11 +24,25 @@ router.post('/create', function(req, res, next) {
   
 	newActuator.id = newId
 	newActuator.name = req.body.actuatorName
-	newActuator.status = req.body.actuatorStatus == "on" ? true : false
+	newActuator.status = req.body.actuatorStatus == "on" ? 1 : 0
 
   devicesService.saveActuator(newActuator);
 
   res.redirect('/admin/actuators');
 });
+
+router.post('/:id', function(req, res, next) {
+  console.log(req.params.id)
+  var actuators = devicesService.getActuators()
+  var id = req.params.id
+  // var status = req.body.status
+  var actuator = actuators.find(actuator => actuator.id == id)
+
+  actuator.status = actuator.status ? 0 : 1
+
+  devicesService.saveFileActuators(actuators)
+
+  res.redirect('/admin/actuators')
+})
 
 module.exports = router;
