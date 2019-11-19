@@ -35,7 +35,6 @@ router.post('/:id', function(req, res, next) {
   console.log(req.params.id)
   var actuators = devicesService.getActuators()
   var id = req.params.id
-  // var status = req.body.status
   var actuator = actuators.find(actuator => actuator.id == id)
 
   actuator.status = actuator.status ? 0 : 1
