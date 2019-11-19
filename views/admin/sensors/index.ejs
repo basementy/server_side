@@ -33,7 +33,7 @@
             <tr>
               <td><%= sensor.id %></td>
 							<td><%= sensor.name %></td>
-							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].date : 'Sem valores' %></td>
+							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].date.split(",")[0] : 'Sem valores' %></td>
 							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].temperature : 'Sem valores' %></td>
 							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].humidity : 'Sem valores' %></td>
             </tr>

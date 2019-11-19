@@ -34,7 +34,7 @@
 							<!-- <td><%= actuator.status ? "Ligado" : "Desligado" %></td> -->
 							<td>
                 <form action="/admin/actuators/<%= actuator.id %>" method="POST">
-                  <button type="submit">
+                  <button type="submit" id=<%= actuator.status ? "actuatorStatus" : "actuatorStatusDisabled" %>>
                     <%= actuator.status ? 'Ligado' : 'Desligado' %>
                   </button>
                 </form>
