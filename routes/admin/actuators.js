@@ -4,7 +4,7 @@ var devicesService = require('../../services/devicesService');
 
 router.get('/', function(req, res, next) {
   var actuators = devicesService.getActuators();
-  
+
   var data = {
     actuators: actuators
   };
@@ -21,7 +21,7 @@ router.post('/create', function(req, res, next) {
   var actuators = devicesService.getActuators();
   var newId = actuators.length + 1
 	var newActuator = {};
-  
+
 	newActuator.id = newId
 	newActuator.name = req.body.actuatorName
 	newActuator.status = req.body.actuatorStatus == "on" ? 1 : 0
