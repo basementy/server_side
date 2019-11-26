@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Dispositivos</title>
+  <%- include('./components/imports'); -%>
+</head>
+
+<body>
+  <%- include('./components/navbar'); -%>
+
+  <div class="container">
+    <div class="row col-12 align-items-center justify-content-center">
+      <div class="col-lg-5 col-md-8 col-sm-12 ">
+        <% sensors.forEach((sensor) => { %>
+          <div class="sensor col-md-12">
+            <h2 style="font-size: 20px !important;" class="sensor-name mb-3">
+              <%= sensor.name %>
+            </h2>
+
+            <% if (sensor.measurements.length > 0) { %>
+            <p class="sensor-info">
+              <strong>Temperatura:</strong> <%= sensor.measurements[sensor.measurements.length -
+                1].temperature %> °C
+            </p>
+
+            <p>
+              <strong>Umidade:</strong> <%= sensor.measurements[sensor.measurements.length -
+                1].humidity %> %
+            </p>
+
+            <% } else { %> <p> Nenhum valor existente para esse sensor </p> <% } %>
+          </div>
+        <% }); %>
+      </div>
+      <div class="col-lg-3 col-md-8 col-sm-12 justify-content-center align-items-center">
+        <% actuators.forEach((actuator) => { %>
+          <div class="actuator col-12">
+            <h2 style="font-size: 16px !important;" class="actuator-name">
+              <%= actuator.name %>
+            </h2>
+            <form action="/dashboard/<%= actuator.id %>" method="POST">
+              <button type="submit" id=<%= actuator.status ? "actuatorStatus" : "actuatorStatusDisabled" %>>
+                <%= actuator.status ? 'Ligado' : 'Desligado' %>
+              </button>
+            </form>
+          </div>
+        <% }); %>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
