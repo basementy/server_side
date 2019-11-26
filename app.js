@@ -19,8 +19,7 @@ var adminSensorsRouter = require("./routes/admin/sensors")
 
 var authRouter = require("./routes/auth")
 var verifyAuth = require("./middlewares/authMiddleware")
-var sensorsRouter = require('./routes/sensors');
-var actuatorsRouter = require('./routes/actuators');
+var dashboardRouter = require('./routes/dashboard')
 
 var app = express()
 
@@ -50,8 +49,7 @@ app.use('/auth', authRouter)
 app.use("/users", usersRouter)
 app.use("/testimonials", testimonialsRouter)
 app.use("/services", servicesRouter)
-app.use('/sensors', sensorsRouter);
-app.use('/actuators', actuatorsRouter);
+app.use('/dashboard', dashboardRouter)
 
 app.use("/admin/posts", [verifyAuth], adminPostsRouter)
 app.use("/admin/testimonials", [verifyAuth], adminTestimonialsRouter)
