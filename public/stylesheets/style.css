@@ -1,18 +1,18 @@
 /* --> Navbar <-- */
 
-@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-		@import url('https://fonts.googleapis.com/css?family=Merriweather&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Merriweather&display=swap");
 
 .navBar {
   width: 100%;
   height: 60px;
-  -webkit-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
-  -moz-box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
-  box-shadow: 0px 5px 20px 0px rgba(0,0,0,0.1);
+  -webkit-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.1);
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .navContainer {
@@ -38,7 +38,7 @@
   justify-content: left;
   list-style: none;
   margin: 0;
-  padding: 0; 
+  padding: 0;
 }
 
 .navBar li {
@@ -86,7 +86,7 @@
 
 #homeContainer {
   padding: 30px 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .rowIndex {
@@ -174,7 +174,7 @@ img {
   width: 100%;
   height: 100%;
   padding: 40px 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .postsList {
@@ -259,7 +259,7 @@ img {
 
 #postContainer {
   padding: 30px 120px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -317,7 +317,7 @@ img {
 #projectsContainer {
   width: 100%;
   padding: 40px 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .projectsList {
@@ -412,7 +412,7 @@ img {
 
 #projectContainer {
   padding: 30px 120px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -466,7 +466,7 @@ img {
 
 #testimonialContainer {
   width: 100%;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -529,7 +529,7 @@ p {
 #servicesContainer {
   width: 100%;
   padding: 40px 0px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .servicesList {
@@ -624,7 +624,7 @@ p {
 
 #serviceContainer {
   padding: 30px 120px;
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -676,7 +676,7 @@ p {
 
 /* Admin - Index */
 .container {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 
 .rowTitle {
@@ -687,7 +687,7 @@ p {
   align-items: center;
 }
 
-.rowTitle h1{
+.rowTitle h1 {
   font-size: 32px;
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
@@ -793,7 +793,7 @@ p {
   align-items: center;
 }
 
-.rowTitleCreate h1{
+.rowTitleCreate h1 {
   font-size: 32px;
   font-weight: 600;
   padding: 10px 30px;
@@ -836,7 +836,7 @@ p {
 /* --> Extra <-- */
 
 #actuatorStatus {
-  padding: 0px 30px;
+  width: 180px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -848,11 +848,10 @@ p {
   -webkit-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
   -moz-box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
   box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.08);
-  transition: 300ms;
 }
 
 #actuatorStatusDisabled {
-  padding: 0px 30px;
+  width: 180px;
   height: 45px;
   display: flex;
   align-items: center;
@@ -872,6 +871,38 @@ p {
   color: white;
   text-decoration: none;
   transition: 300ms;
+}
+
+/* --> Sensors <-- */
+
+.sensor {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 180px;
+  margin-top: 60px;
+  background-color: white !important;
+  -webkit-box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  border-radius: 10px;
+}
+
+.actuator {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 180px;
+  margin-top: 60px;
+  background-color: white !important;
+  -webkit-box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 3px 10px 15px 0px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  border-radius: 10px;
 }
 
 /* --> Responsividade <-- */
@@ -985,7 +1016,7 @@ p {
     margin-top: 30px;
     justify-content: center;
   }
-  .rowCreateButton button{
+  .rowCreateButton button {
     width: 95%;
     height: 60px;
   }
