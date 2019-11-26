@@ -11,7 +11,7 @@
     <div class="row rowTitleCreate">
       <h1>Cadastrar</h1>
 		</div>
-		
+
     <div class="row rowForm">
       <form action="create" method="POST">
         <div class="formContainer">
@@ -19,11 +19,11 @@
             <label for="actuatorName">Nome</label>
             <input name="actuatorName" type="text" class="formInput" id="actuatorName" placeholder="Nome do ativador">
           </div>
-  
+
           <div class="formWrapper">
             <label for="actuatorStatus">Situação</label>
-            <select name="actuatorStatus" id="actuatorStatus">
-							<option value="on">Ligado</option> 
+            <select name="actuatorStatus" class="pr-5" id="status">
+							<option value="on">Ligado</option>
   						<option value="off" selected>Desligado</option>
 						</select>
           </div>

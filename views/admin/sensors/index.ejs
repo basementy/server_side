@@ -23,7 +23,8 @@
           <tr>
             <th scope="col">Código</th>
 						<th scope="col">Nome</th>
-						<th scope="col">Data</th>
+            <th scope="col">Data</th>
+            <th scope="col">Hora</th>
 						<th scope="col">Temperatura</th>
 						<th scope="col">Umidade</th>
           </tr>
@@ -33,15 +34,16 @@
             <tr>
               <td><%= sensor.id %></td>
 							<td><%= sensor.name %></td>
-							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].date.split(",")[0] : 'Sem valores' %></td>
-							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].temperature : 'Sem valores' %></td>
-							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].humidity : 'Sem valores' %></td>
+              <td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].date.split(" ")[0] : 'Sem Data' %></td>
+              <td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].date.split(" ")[1] : 'Sem Horário' %></td>
+							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].temperature + ' °C' : 'Sem Temperatura' %></td>
+							<td><%= sensor.measurements.length > 0 ? sensor.measurements[sensor.measurements.length - 1].humidity + ' %' : 'Sem Umidade' %></td>
             </tr>
           <% }); %>
         </tbody>
       </table>
     </div>
   </div>
-  
+
 </body>
 </html>
